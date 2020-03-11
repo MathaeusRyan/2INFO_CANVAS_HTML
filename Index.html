@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>CANVAS - ETEC</title>
+    <style type="text/css">
+    body{
+        margin:0px;
+    }
+
+    </style>
+</head>
+<body data-rsssl=1>
+    <canvas id="canvas"></canvas>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript">
+    function banner(){
+
+        var keyword = " NIKOLAS ";
+          var canvas;
+          var context;
+
+          var bgCanvas;
+          var bgContext;
+
+          var denseness = 10;
+          var parts = [];
+
+              var mouse = {x:-100,y:-100};
+              var mouseOnScreen = false;
+
+              var itercount = 0;
+              var itertot = 40;
+
+        this.initialize = function(canvas_id){
+                canvas = document.getElementById(canvas_id);
+                context = canvas.getContext('2d');
+
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+
+                bgCanvas = document.createElement('canvas');
+                bgContext = bgCanvas.getContext('2d');
+
+                bgCanvas.width = window.innerWidth;
+                bgCanvas.height = window.innerHeight;
+
+                canvas.addEventListener('mousemove',MouseMove, false);
+                canvas.addEventListener('mouseout',MouseOut, false);
+                        start();
+        }
+            var start = function(){
+
+                bgContext.fillStyle = "#000000";
+                bgContext.font = '300px impact';
+                bgContext.fillText(keyword, 85, 275);
+
+                clear();
+                getCoords();
+            }
+
+            
+
+    }
+    </script>
+    
+</body>
+</html>
